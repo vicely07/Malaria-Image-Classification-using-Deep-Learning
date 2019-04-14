@@ -1,0 +1,14 @@
+runtime: python27
+threadsafe: true
+
+handlers:
+- url: .*
+  script: run_server.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
+- name: ssl
+  version: latest
+- name: numpy
+  version: latest
