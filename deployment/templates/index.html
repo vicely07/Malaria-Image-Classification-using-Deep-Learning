@@ -1,0 +1,97 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Malaria Detector</title>
+  <meta name="description" content="Malaria Detector">
+  <meta name="author" content="SitePoint">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="stylesheet" href="/static/css/progress.css">
+  <link rel="stylesheet" href="/static/css/dropzone.min.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
+  
+  
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+  <script type="text/javascript" src="/static/js/dropzone.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+        
+    <div class = "content">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style = "max-width: 800px; margin: auto;"> 
+                <a class="navbar-brand" href="/">Malaria Detector</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="https://devpost.com/software/malaria-scanner">About <span class="sr-only">(current)</span></a>
+                    </li>
+
+
+                    </ul>
+                </div>
+        </nav>
+        {% block content %}
+
+        <img src="/static/images/logo.png" alt="Logo" class="logo" style = "display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;">
+        <form id= "form" method= "post" enctype= "multipart/form-data" style = "text-align:center;padding-top: 0px;">
+    
+          <label for="file" style="border-style:dashed;border-color: red;border-width: 2px;">Upload your image here</label>
+          {{ form.file}}
+          
+        </form>
+        <h1 id = "uploadmsg" style="text-align:center"></h1>
+        {% endblock %}
+
+
+    </div>
+
+    <script>
+        function loadDropzone(){    
+            Dropzone.options.form = {
+                init: function() {
+                    this.on("drop", function(file) {submitFile()
+                    console.log("dropped")});
+                }
+            };
+        }
+
+        window.onload = loadDropzone;
+
+        document.getElementById("file").onchange = function() {
+            
+            submitFile();
+            
+          } ;
+
+          function submitFile(){
+            var form = document.getElementById("form");
+            form.submit();
+            document.getElementById("uploadmsg").innerHTML += 'UPLOADING'
+          }
+        </script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

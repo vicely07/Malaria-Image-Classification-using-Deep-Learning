@@ -145,7 +145,7 @@ START // CHART'S RULES
   font-size: 1em;
   position: relative;
   height: 10em;
-  transition: all 0.3s ease-in-out;
+  transition: all 4s ease-in-out;
   -webkit-transform: rotateX(60deg) rotateY(0deg);
           transform: rotateX(60deg) rotateY(0deg);
   -webkit-transform-style: preserve-3d;
@@ -188,7 +188,7 @@ START // CHART'S RULES
 }
 
 .growing-bar {
-  transition: all 0.3s ease-in-out;
+  transition: all 3s ease-in-out;
   background-color: rgba(236, 0, 140, 0.6);
   width: 100%;
   height: 2em;
@@ -208,25 +208,26 @@ START // CHART'S RULES
 .bar.red .side-a, input[id="red"]:checked ~ .chart .side-a,
 .bar.red .growing-bar,
 input[id="red"]:checked ~ .chart .growing-bar {
-  background-color: rgba(236, 0, 140, 0.6);
+  background-color: rgba(255, 0, 0, 0.6);
 }
 .bar.red .side-0 .growing-bar, input[id="red"]:checked ~ .chart .side-0 .growing-bar {
-  box-shadow: -0.5em -1.5em 4em rgba(236, 0, 140, 0.8);
+  box-shadow: -0.5em -1.5em 4em rgba(255, 0, 0, 0.8);
 }
 .bar.red .floor .growing-bar, input[id="red"]:checked ~ .chart .floor .growing-bar {
-  box-shadow: 0em 0em 2em rgba(236, 0, 140, 0.8);
+  box-shadow: 0em 0em 2em rgba(255, 0, 0, 0.8);
 }
 
 .bar.cyan .side-a, input[id="cyan"]:checked ~ .chart .side-a,
 .bar.cyan .growing-bar,
 input[id="cyan"]:checked ~ .chart .growing-bar {
-  background-color: rgba(87, 202, 244, 0.6);
+  background-color: rgba(244, 87, 87, 0.6);
 }
 .bar.cyan .side-0 .growing-bar, input[id="cyan"]:checked ~ .chart .side-0 .growing-bar {
-  box-shadow: -0.5em -1.5em 4em #57caf4;
+  box-shadow: -0.5em -1.5em 4em #f45757;
 }
 .bar.cyan .floor .growing-bar, input[id="cyan"]:checked ~ .chart .floor .growing-bar {
-  box-shadow: 0em 0em 2em #57caf4;
+  box-shadow: -0.5em -1.5em 4em #f45757;
+  box-shadow: 0em 0em 2em #f45757;
 }
 
 .bar.navy .side-a,
@@ -748,7 +749,7 @@ label {
   padding: 1em;
   margin: 0 0.2em;
   cursor: pointer;
-  transition: all 0.15s ease-in-out;
+  transition: all 2s ease-in-out;
   color: #0a4069;
   border: 1px solid rgba(254, 254, 254, 0.6);
   border-radius: 0;

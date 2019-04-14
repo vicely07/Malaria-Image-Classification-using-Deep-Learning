@@ -94,7 +94,7 @@ def generate_random_start(model, graph, seed_length=50,
     a_html = addContent(a_html, header('Actual', color='darkgreen'))
     a_html = addContent(a_html, box(remove_spaces(' '.join(a))))
 
-    return '<div>{seed_html}</div><div>{gen_html}</div><div>{a_html}</div>'
+    return f'<div>{seed_html}</div><div>{gen_html}</div><div>{a_html}</div>'
 
 
 def generate_from_seed(model, graph, seed,
@@ -139,17 +139,17 @@ def generate_from_seed(model, graph, seed,
     html = addContent(html, header(
         'Input Seed ', color='black', gen_text='Network Output'))
     html = addContent(html, box(start, gen))
-    return '<div>{html}</div>'
+    return f'<div>{html}</div>'
 
 
 def header(text, color='black', gen_text=None):
     """Create an HTML header"""
 
     if gen_text:
-        raw_html = '<h1 style="margin-top:16px;color: {color};font-size:54px"><center>' + str(
+        raw_html = f'<h1 style="margin-top:16px;color: {color};font-size:54px"><center>' + str(
             text) + '<span style="color: red">' + str(gen_text) + '</center></h1>'
     else:
-        raw_html = '<h1 style="margin-top:12px;color: {color};font-size:54px"><center>' + str(
+        raw_html = f'<h1 style="margin-top:12px;color: {color};font-size:54px"><center>' + str(
             text) + '</center></h1>'
     return raw_html
 
